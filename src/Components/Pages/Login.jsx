@@ -1,5 +1,5 @@
 import { Box, Text, Heading, VStack, FormControl, Input, Link, Button, HStack, Center } from "native-base";
-import React, { Component } from "react";
+import React from "react";
 
 const Example = () => {
   return <Center w="100%">
@@ -53,9 +53,5 @@ const Example = () => {
     </Center>;
 };
 
-export default () => {
-  return (
-    <Example/>
-  )
-};
+export default Example;
 

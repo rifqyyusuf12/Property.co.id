@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { VStack, Center, Flex, Box, HStack } from 'native-base';
+import { VStack, Box } from 'native-base';
 
 import BackroundImage from './../common/backroundImage';
 import About from './bodyHome';

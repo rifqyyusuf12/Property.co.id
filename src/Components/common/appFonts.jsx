@@ -5,7 +5,7 @@ const theme = extendTheme({
     Roboto: {
       100: {
         normal: 'Roboto-Light',
-        italic: 'Roboto-LightItalic',
+      italic: 'Roboto-LightItalic',
       },
       200: {
         normal: 'Roboto-Light',
