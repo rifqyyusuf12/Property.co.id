@@ -11,11 +11,11 @@ class Home extends Component {
   render() { 
     return (
       <VStack space={3} alignItems="center" >
-          <Box  h="900" w="800" bg="yellow.400" rounded="md" shadow={3} my={1} >
+          <Box  h="900" w="800" bg="yellow.300" rounded="md" shadow={3} my={1} >
             <BackroundImage />
             <About/>
           </Box>
-          <Box  h="800" w="800" bg="yellow.400" rounded="md" shadow={3} my={1} alignItems="center" >
+          <Box  h="800" w="800" bg="yellow.300" rounded="md" shadow={3} my={1} alignItems="center" >
             <ContentHome />
           </Box>
           

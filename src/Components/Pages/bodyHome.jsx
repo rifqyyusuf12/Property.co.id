@@ -3,7 +3,7 @@ import { HStack,  Flex, Box } from 'native-base';
 import { Text } from 'native-base';
 
 class About extends Component {
-    state = {  } 
+
     render() { 
         return (
             <>

@@ -1,53 +1,55 @@
 import React, { Component } from 'react';
-import {Center, Text, Box, HStack, Image, Stack, Heading } from "native-base"
+import { Pressable, Text, Box, HStack, Spacer, Flex, Image } from "native-base";
 
 class CardHome extends Component {
     state = {  } 
     render() { 
         return (
-            <Stack direction={["column", "column", "row"]} rounded="lg" overflow="hidden" width={["72", "72", "4/6"]} shadow="1" _light={{
-                backgroundColor: "coolGray.50"
-              }} _dark={{
-                backgroundColor: "gray.700"
-              }}>
-                  <Box>
-                    <Image w={["100%", "100%", "40"]} h="100%" source={{
+<Box alignItems="center">
+      <Pressable>
+        {({
+        isHovered,
+        isFocused,
+        isPressed
+      }) => {
+        return <Box maxW="96" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? "coolGray.200" : isHovered ? "coolGray.200" : "coolGray.100"} p="5" my="5" rounded="8" style={{
+          transform: [{
+            scale: isPressed ? 0.96 : 1
+          }]
+        }}>
+              <HStack alignItems="center">
+
+                <Spacer/>
+                <Image w={["90%", "90%", "40"]} h="150" source={{
                     uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
                   }} alt="image" />
-                    <Center bg="violet.500" _text={{
-                    color: "white",
-                    fontWeight: "700",
-                    fontSize: "xs"
-                  }} position="absolute" bottom="0" px="3" py="1.5">
-                      PHOTOS
-                    </Center>
-                  </Box>
-                  <Stack flex="1" p="4" space={[3, 3, 1.5]}>
-                    <Stack space="2">
-                      <Heading size="md" ml="-1">
-                        The Garden City
-                      </Heading>
-                      <Text fontSize="xs" color="violet.500" fontWeight="500" ml="-0.5" mt="-1">
-                        The Silicon Valley of India.
-                      </Text>
-                    </Stack>
-                    <Text fontWeight="400">
-                      Bengaluru (also called Bangalore) is the center of India's high-tech
-                      industry. The city is also known for its parks and nightlife.
-                    </Text>
-                    <HStack alignItems="center" space="4" justifyContent="space-between">
-                      <HStack alignItems="center">
-                        <Text color="coolGray.600" _dark={{
-                        color: "warmGray.200"
-                      }} fontWeight="400">
-                          6 mins ago
-                        </Text>
-                      </HStack>
-                    </HStack>
-                  </Stack>
-                </Stack>
+                <Spacer />
+              </HStack>
+                <Text fontSize={12} color="coolGray.800">
+                  1 month ago
+                </Text>
+              <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
+                Marketing License
+              </Text>
+              <Text mt="2" fontSize="sm" color="coolGray.700">
+                Unlock powerfull time-saving tools for creating email delivery
+                and collecting marketing data
+              </Text>
+              <Flex>
+                {isFocused ? <Text mt="5" fontSize={12} fontWeight="medium" textDecorationLine="underline" color="darkBlue.600" alignSelf="flex-start">
+                    Read More
+                  </Text> : <Text mt="5" fontSize={12} fontWeight="medium" color="darkBlue.600">
+                    Read More
+                  </Text>}
+              </Flex>
+            </Box>;
+      }}
+      </Pressable>
+    </Box>
         );
     }
 }
  
 export default CardHome;
+
+

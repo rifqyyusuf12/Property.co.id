@@ -2,30 +2,35 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './Components/Pages/Home';
 import Property from './Components/Pages/Property';
-import Chat from './Components/Pages/Chat';
 import Transaction from './Components/Pages/Transaction';
 import Account from './Components/Pages/Account';
 import NavBar from './Components/Pages/navbar';
-import LoginForm from './Components/Pages/Login';
+import Login from './Components/Pages/Login';
 import { Box } from 'native-base';
+import Footer from './Components/AppComponents/footer';
+import Forget from './Components/Pages/welcome/forget';
+import Signup from './Components/Pages/welcome/signupForm';
 
 function App() {
   return (
     <>  
-      <Box position="relative">
+      <Box>
         <NavBar />
-
       </Box>
-      <Box position="relative" >
+      <Box >
+
         <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/property" element={<Property />} />
-            <Route path="/chat" element={<Chat />} />
             <Route path="/transaction" element={<Transaction />} />
             <Route path="/account" element={<Account/>} />
-            <Route path="/login" element={<LoginForm/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/forget" element={<Forget />} />
+            <Route path="/login/signup" element={<Signup />} />
         </Routes>
-
+      </Box>
+      <Box>
+        <Footer />
       </Box>
     </>
   );

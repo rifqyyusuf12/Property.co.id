@@ -8,7 +8,6 @@ class Logo extends Component {
         src={require("../assets/logo.png")}
         className="mr-3 h-6 sm:h-10"
         alt="Logo"
-        width={200}
       />
         );
     }

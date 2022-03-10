@@ -1,109 +1,29 @@
 import {
-  Button,
   Center,
   VStack,
   Box,
-  Menu,
-  Pressable,
-  HamburgerIcon,
   Flex,
-  Spacer,
-  Input,
-  Icon,
+
 } from "native-base";
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { BsSearch } from 'react-icons/bs';
+import { Link } from "react-router-dom";
 import Logo from './../common/appLogo';
 
 class NavBar extends Component {
   render() {
     return (
       <>
-        <VStack alignItems="center" >
+        <VStack alignItems="center" position="sticky" top="1" zIndex="100" backgroundColor="white" >
           {/* header */}
-          <Center w="800" h="20" bg="white.300" rounded="md" shadow={3} space={2.5}>
+          <Center w="800" h="20" bg="white.300" rounded="md" shadow={3} space={2.5}  >
             <Flex direction="row" justifyContent="space-between" >
               <Center>
                 <Link to="/" className="navbar-logo" >
-                  <Logo />
+                  <Box w={200}>
+
+                  <Logo  />
+                  </Box>
                 </Link>
-              </Center>
-              <Spacer />
-              <Center>
-                <VStack w="100%" space={5}>
-                  <Input
-                    placeholder="Search"
-                    variant="filled"
-                    width="100%"
-                    borderRadius="10"
-                    py="1"
-                    px="2"
-                    borderWidth="0"
-                    InputLeftElement={
-                      <Icon
-                        ml="2"
-                        size="4"
-                        color="gray.400"
-                        as={<BsSearch />}
-                      />
-                    }
-                  />
-                </VStack>
-              </Center>
-              <Spacer />
-              <Center>
-                <Box h="80%" w="90%" alignItems="flex-start">
-                  <Menu
-                    w="190"
-                    trigger={(triggerProps) => {
-                      return (
-                        <Pressable
-                          accessibilityLabel="More options menu"
-                          {...triggerProps}
-                        >
-                          <HamburgerIcon />
-                        </Pressable>
-                      );
-                    }}
-                  >
-                    <Menu.Item>
-                      <Button small primary>
-                        <NavLink className="nav-link" to="/home">
-                          Home
-                        </NavLink>
-                      </Button>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Button small primary>
-                        <NavLink className="nav-link" to="/property">
-                          Property
-                        </NavLink>
-                      </Button>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Button small primary>
-                        <NavLink className="nav-link" to="/chat">
-                          Chat
-                        </NavLink>
-                      </Button>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Button small primary>
-                        <NavLink className="nav-link" to="/transaction">
-                          Transaction
-                        </NavLink>
-                      </Button>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Button small primary>
-                        <NavLink className="nav-link" to="/account">
-                          Account
-                        </NavLink>
-                      </Button>
-                    </Menu.Item>
-                  </Menu>
-                </Box>
               </Center>
             </Flex>
           </Center>
